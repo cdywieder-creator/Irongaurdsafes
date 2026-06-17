@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 92" role="img" aria-label="Ironguard Safes">
+  <path d="M44 6 L78 17 V46 C78 66 63 79 44 86 C25 79 10 66 10 46 V17 Z" fill="#1a2233"/>
+  <path d="M44 13 L72 22 V46 C72 62 60 73 44 79 C28 73 16 62 16 46 V22 Z" fill="none" stroke="#c8a45c" stroke-width="1.8"/>
+  <path d="M35 41 V35 a9 9 0 0 1 18 0 V41" fill="none" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round"/>
+  <rect x="30" y="41" width="28" height="22" rx="3.5" fill="#ffffff"/>
+  <circle cx="44" cy="50" r="3.4" fill="#1a2233"/>
+  <rect x="42.6" y="51" width="2.8" height="7" rx="1.4" fill="#1a2233"/>
+</svg>
