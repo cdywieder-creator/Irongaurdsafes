@@ -20,8 +20,12 @@ Built with plain HTML, CSS and JavaScript — **no frameworks, no build tools.**
 - **Accent gold:** `#c8a45c`
 - **Backgrounds:** white / light gray (`#f5f6f9`) alternating
 - **Headlines:** serif (Georgia) · **Body:** Inter (sans-serif)
-- **Logo:** recreated as scalable SVG (`assets/images/logo.svg` and `logo-white.svg`)
-  from the supplied brand PDF (kept at `assets/images/Ironguard_Logo.pdf`).
+- **Headlines:** Space Grotesk · **Body:** Inter
+- **Logo:** converted directly from the supplied brand PDF (`assets/images/Ironguard_Logo.pdf`)
+  into vector SVG (`assets/images/logo.svg`) — the exact navy/white shield + "IRONGUARD SAFES"
+  lockup, self-contained so it renders on any background.
+- **Photos:** safe imagery is loaded from Unsplash; every photo slot has a branded
+  gold-on-navy fallback tile that appears automatically if an image fails to load.
 
 ## Contact details used site-wide
 

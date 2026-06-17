@@ -130,6 +130,16 @@
     });
   }
 
+  /* ---- Image fallback: reveal branded tile if a photo fails to load ---- */
+  document.querySelectorAll(".media img").forEach(function (img) {
+    var fail = function () {
+      var m = img.closest(".media");
+      if (m) m.classList.add("media--failed");
+    };
+    if (img.complete && img.naturalWidth === 0) fail();
+    img.addEventListener("error", fail);
+  });
+
   /* ---- Footer year ---- */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
