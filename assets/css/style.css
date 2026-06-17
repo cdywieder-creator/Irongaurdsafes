@@ -488,22 +488,22 @@ h2 { font-family: var(--serif); }
 }
 
 .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-.value {
+.values-grid .value {
   background: var(--navy-2);
   border: 1px solid #2c3650;
   border-radius: 14px;
   padding: 32px 26px;
 }
-.value__icon {
+.values-grid .value__icon {
   width: 54px; height: 54px;
   border-radius: 12px;
   background: rgba(200,164,92,.12);
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 18px;
 }
-.value__icon svg { fill: var(--gold); width: 26px; height: 26px; }
-.value h3 { font-family: var(--sans); color: #fff; font-size: 19px; margin-bottom: 10px; }
-.value p { color: #aab2c2; font-size: 15px; }
+.values-grid .value__icon svg { fill: var(--gold); width: 26px; height: 26px; }
+.values-grid .value h3 { font-family: var(--sans); color: #fff; font-size: 19px; margin-bottom: 10px; }
+.values-grid .value p { color: #aab2c2; font-size: 15px; }
 
 /* ---------- CTA strip ---------- */
 .cta-strip {
