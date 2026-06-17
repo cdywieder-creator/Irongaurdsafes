@@ -80,9 +80,29 @@ python3 -m http.server 8080
 
 The `_headers` file is applied automatically by Cloudflare Pages.
 
-### Contact form note
+### Contact form (Cloudflare Pages Function + Resend)
 
-The form currently runs a client-side demo handler (validates and shows a success
-message). To receive real submissions, connect it to a form backend such as
-[Cloudflare Pages Functions](https://developers.cloudflare.com/pages/functions/),
-Formspree, or a similar service.
+The contact form posts to a Pages Function at `functions/api/contact.js`
+(route: `POST /api/contact`), which emails submissions via [Resend](https://resend.com).
+
+**One-time setup:**
+
+1. **Resend account:** sign up at [resend.com](https://resend.com) (free tier: 100 emails/day).
+2. **Verify your domain:** Resend → *Domains* → add `ironguardsafes.com` and add the
+   DNS records it gives you. Since the domain is on Cloudflare, add them in
+   **Cloudflare → DNS** (or click "Verify" if Resend can add them for you).
+3. **API key:** Resend → *API Keys* → create one, copy it.
+4. **Cloudflare Pages variables:** project → **Settings → Variables and Secrets**, add:
+   | Name | Type | Value |
+   |------|------|-------|
+   | `RESEND_API_KEY` | Secret | your Resend API key |
+   | `CONTACT_TO` | Plaintext | `nate@ironguardsafes.com` |
+   | `CONTACT_FROM` | Plaintext | `Ironguard Website <noreply@ironguardsafes.com>` |
+5. **Redeploy** (Deployments → Retry deployment) so the variables take effect.
+
+The function validates input, blocks spam via a honeypot field, and sends a
+formatted email with the visitor's details (reply-to is set to the visitor's email).
+
+> Until these variables are set, the form returns a friendly "please call us" message
+> instead of failing silently. Local `python3 -m http.server` won't run the function —
+> use `npx wrangler pages dev .` to test the function locally.

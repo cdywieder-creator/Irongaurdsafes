@@ -67,21 +67,66 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
-  /* ---- Contact form (client-side demo handler) ---- */
+  /* ---- Contact form ---- */
   var form = document.getElementById("contactForm");
   if (form) {
+    var success = form.querySelector(".form__success");
+    var errorBox = form.querySelector(".form__error");
+    var submitBtn = form.querySelector('button[type="submit"]');
+
+    var showError = function (msg) {
+      if (errorBox) {
+        errorBox.textContent = msg;
+        errorBox.classList.add("show");
+      }
+    };
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      if (errorBox) errorBox.classList.remove("show");
+      if (success) success.classList.remove("show");
+
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
-      var success = form.querySelector(".form__success");
-      if (success) {
-        success.classList.add("show");
-        success.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-      form.reset();
+
+      var data = {
+        name: form.name.value,
+        phone: form.phone.value,
+        email: form.email.value,
+        message: form.message.value,
+        company: form.company ? form.company.value : "" // honeypot
+      };
+
+      var originalLabel = submitBtn ? submitBtn.textContent : "";
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Sending..."; }
+
+      fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      })
+        .then(function (res) {
+          return res.json().then(function (body) { return { ok: res.ok && body.ok, body: body }; });
+        })
+        .then(function (result) {
+          if (result.ok) {
+            if (success) {
+              success.classList.add("show");
+              success.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            form.reset();
+          } else {
+            showError((result.body && result.body.error) || "Something went wrong. Please call 848-222-3606.");
+          }
+        })
+        .catch(function () {
+          showError("Network error. Please call 848-222-3606 and we'll help right away.");
+        })
+        .finally(function () {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+        });
     });
   }
 

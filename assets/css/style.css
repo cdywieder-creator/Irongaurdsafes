@@ -395,6 +395,25 @@ h2 { font-family: var(--serif); }
   margin-bottom: 18px;
 }
 .form__success.show { display: block; }
+.form__error {
+  display: none;
+  background: #fbeeee;
+  border: 1px solid #e6c4c4;
+  color: #9a2f2f;
+  padding: 14px 18px;
+  border-radius: 9px;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+.form__error.show { display: block; }
+/* Honeypot — hidden from real users, visible to bots */
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 
 .contact-info { padding-top: 6px; }
 .contact-info h3 { font-family: var(--serif); font-size: 26px; margin-bottom: 10px; }
