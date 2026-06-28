@@ -45,7 +45,7 @@ h1,h2,h3,h4{font-family:var(--disp);font-weight:800;line-height:1.02;letter-spac
 
 /* ---------- top bar ---------- */
 .topbar{background:var(--navy-deep);border-bottom:1px solid var(--line-d);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut-d);}
-.topbar__in{display:flex;justify-content:space-between;align-items:center;height:42px;gap:20px;}
+.topbar__in{display:flex;justify-content:center;align-items:center;height:42px;gap:20px;}
 .topbar a{color:#fff;}
 .topbar a:hover{color:var(--steel);}
 
