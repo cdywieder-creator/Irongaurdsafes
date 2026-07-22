@@ -6,7 +6,7 @@
 ## Writing & tone
 - **Voice:** professional but warm and plainspoken — no corporate jargon.
 - **Email length:** keep it short. Get to the point in the first sentence.
-- **Sign-off:** _(e.g. "Thanks, Nate" or "Best, Nuchem Braun — Ironguard Safes")_
+- **Sign-off:** _(e.g. "Thanks," + your name, or "Best, — Fillpack")_
 
 ## Formatting
 - Use bullet points over long paragraphs.

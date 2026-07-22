@@ -1,7 +1,7 @@
 # Executive Assistant
 
-This folder turns Claude into your **executive assistant for Ironguard Safes**.
-It draft emails, does research, prepares documents, tracks tasks, and remembers
+This folder turns Claude into your **executive assistant for Fillpack**. It
+drafts emails, does research, prepares documents, tracks tasks, and remembers
 things between sessions — always saving files in a predictable place.
 
 ## How it works
@@ -37,23 +37,24 @@ executive-assistant/
 2. Start a session **inside this folder** (or tell Claude to read
    `executive-assistant/CLAUDE.md`) so it loads its instructions.
 3. Just ask, in plain English:
-   - *"Draft a follow-up email to the client from yesterday's call."*
-   - *"Research Liberty Safe's pricing in NJ and save it."*
-   - *"Add 'order two more wall safes' to my tasks."*
+   - *"Draft a follow-up email to the customer from yesterday's call."*
+   - *"Research a competitor's pricing and save it."*
+   - *"Add 'reorder shipping boxes' to my tasks."*
    - *"Take notes for my 3pm call with a new lead."*
 4. It does the work, **saves it in the right folder, and tells you the path.**
 
 ## ⚠️ Privacy note — please read
 
-This folder currently lives **inside the public website repository**. If the
-website is deployed (e.g. Cloudflare Pages) and the GitHub repo is public, files
-here could be reachable by anyone who guesses the URL. So:
+This folder currently lives **inside a public website repository** (the Ironguard
+Safes site). If that repo is public, files here could be reachable by anyone who
+guesses the URL. So:
 
 - **Don't put truly sensitive data** (passwords, full customer records,
   financials) in these files as-is.
 - Better options, any of which I can help you set up:
-  1. Make the GitHub repository **private**, or
-  2. Move this `executive-assistant/` folder into its **own private repo**, or
+  1. Move this `executive-assistant/` folder into its **own private repo**
+     (recommended — it isn't really part of the Ironguard website anyway), or
+  2. Make the current GitHub repository **private**, or
   3. Keep it here but only store non-sensitive working notes.
 
 Ask me and I'll walk you through whichever you prefer.
